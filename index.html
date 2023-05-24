@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="dist/output.css">
+    <script src="https://kit.fontawesome.com/0c0888491f.js" crossorigin="anonymous"></script>
+</head>
+
+<body class="bg-slate-50">
+    <div id="landing" class="transition-opacity opacity-100 w-screen h-[90vh] flex justify-center items-center p-6">
+        <div class="dialog flex flex-col justify-center items-center py-6 gap-2">
+            <h1 class="text-4xl font-black">HEROINE IMPACT</h1>
+            <button onclick="gotoMain()" class="btn">Mulai</button>
+        </div>
+    </div>
+    <div id="main"
+        class="opacity-0 hidden transition-opacity px-6 pb-24 pt-6 w-full h-screen flex flex-col justify-end items-center bg-[url('/img/aether.webp')] bg-contain  bg-no-repeat bg-right-bottom">
+        <div class="h-40 w-full bg-gradient-to-t absolute bottom-0 from-slate-50 to-transparent"></div>
+        <div class="dialog">
+            <p id="dialog-body"></p>
+            <button onclick="typeWriter()" class="btn-skip"><i
+                    class="fa-solid fa-chevron-down text-inherit animate-bounce"></i></button>
+        </div>
+    </div>
+    <script src="node_modules\jquery\dist\jquery.min.js"></script>
+    <script>
+        function gotoMain() {
+            $('#landing').addClass('opacity-0');
+            $('#landing').removeClass('opacity-100');
+            setTimeout(() => {
+                $('#landing').addClass('hidden');
+                $('#main').removeClass('hidden')
+                $('#main').addClass('opacity-100')
+                setTimeout(() => {
+                    $('#main').removeClass('opacity-0')
+                }, 301)
+            }, 301)
+        }
+
+
+        // let txt = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus laborum minima officia distinctio suscipit repellat at dicta fugiat sed quod, fuga hic soluta labore error!";
+        // let i = 0;
+        // function typeWriter() {
+        //     if (i < txt.length) {
+        //         document.getElementById("dialog-body").innerHTML += txt.charAt(i);
+        //         i++;
+        //         setTimeout(typeWriter, 1);
+        //     }
+        // }
+    </script>
+</body>
+
+</html>
